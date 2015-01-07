@@ -1,0 +1,27 @@
+{
+  "name"            : "devcast.co",
+  "version"         : "0.1.7",
+  "description"     : "",
+  "homepage"        : "",
+  "author"          : "Javi Jimenez Villar",
+  "dependencies": {
+    "coffee-script" : "*",
+    "zenserver"     : "*"
+  },
+  "devDependencies" : {
+    "gulp"        : "*",
+    "gulp-coffee" : "*",
+    "gulp-concat" : "*",
+    "gulp-flatten": "*",
+    "gulp-header" : "*",
+    "gulp-stylus" : "*",
+    "gulp-uglify" : "*",
+    "gulp-util"   : "*",
+    "gulp-yml"    : "*"
+  },
+  "scripts"         : {
+    "start"       : "node zen",
+    "postinstall" : "bower install"
+  },
+  "engines"         : { "node": "*"}
+}

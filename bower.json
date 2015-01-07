@@ -1,0 +1,24 @@
+{
+    "name": "devcast.co",
+    "version": "0.13.7",
+    "directory": "dependencies/bower",
+    "componentsDirectory": "dependencies/bower",
+    "ignore": [
+            "**/.*",
+            "node_modules",
+            "bower_components",
+            "test",
+            "tests"
+    ],
+    "dependencies": {
+        "atoms"            : "*",
+        "atoms-icons"      : "*",
+        "atoms-app-theme"  : "*",
+        "atoms-app-crud"   : "*",
+        "hope"             : "*",
+        "flexo"            : "*",
+        "jquery"           : "*",
+        "stylmethods"      : "*",
+        "moment"           : "*"
+    }
+}
