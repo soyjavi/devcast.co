@@ -1,0 +1,23 @@
+id: app
+style: active
+children:
+  - Organism.Section:
+      id: videos
+      style: active padding
+      events:
+        - scroll
+
+      children:
+        - Molecule.List:
+            id: list
+            events:
+              - select
+            callbacks:
+              - onVideoSelect
+            bind:
+              entity      : __.Entity.Video
+              atom        : "Atom.Video"
+              events      : ["touch"]
+              create      : true
+              update      : true
+              destroy     : true

@@ -24,7 +24,7 @@ www =
                 'source/style/__init.styl'
                 # ATOMS
                 'source/style/atoms/*.styl'
-                'bower_components/atoms-icons/atoms.icons.styl'
+                # 'bower_components/atoms-icons/atoms.icons.styl'
                 # FLEXO
                 'source/style/flexo/flexo.styl'
                 'source/style/flexo/flexo.page.styl'

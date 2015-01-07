@@ -1,0 +1,41 @@
+html
+  overflow: visible !important
+
+body
+  display: block !important
+
+  > header, > footer
+    z-index                         : 1980
+    position                        : absolute
+    left                            : 0
+    right                           : 0
+
+  > header
+    background                      : THEME
+    background-color                : rgba(235, 57, 8, 0.9)
+    color                           : WHITE
+    height                          : UNIT
+    padding                         : 0 SPACE
+
+    h1
+      margin-right: SPACE
+      font-size: (UNIT / 3)
+      font-weight: FONT-WEIGHT-BOLD
+    input
+      max-width: 25%
+      margin: 0
+      background-color: darken(THEME, 25%) !important
+      color: white !important
+    nav > *
+      margin-left: (SPACE / 2)
+    button
+      margin-bottom: 0
+
+  > article
+    padding-top: UNIT
+
+
+  > footer
+    bottom                          : 0
+    padding                         : SPACE (2 * SPACE)
+    font-weight                     : FONT-WEIGHT-BOLD

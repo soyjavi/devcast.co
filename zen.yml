@@ -2,15 +2,9 @@
 environment: development
 
 # -- RESTful services ----------------------------------------------------------
-# api:
-#   - oauth/twitter
-#   - oauth/twitter.examples
-#   - deploy
-#   - session
-#   - goal
-#   - campaign.goal
-#   - campaign
-#   - pay
+api:
+  - session
+  - index
 
 # -- HTML pages ----------------------------------------------------------------
 www:
