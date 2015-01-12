@@ -5,18 +5,42 @@ body
   a
     color                   : WHITE
     text-decoration         : NONE
-    &:hover
-      color                 : THEME
 .color
   &.white
     color                   : WHITE
   &.theme
     color                   : THEME
 
+.tags
+  > *
+    text-shadow             : 0 1px rgba(0,0,0,0.25)
+    background-color        : rgba(0,0,0,0.8)
+    &.javascript, &.hadoop
+      background-color: #F0DB4F !important
+      color:  WHITE !important
+    &.python
+      background-color: #2A5A82 !important
+    &.ruby
+      background-color: #CC342D !important
+    &.css
+      background-color: #1572B7 !important
+    &.php
+      background-color: #5E66A4 !important
+    &.android
+      background-color: green !important
+    &.redis
+      background-color: #D82A20 !important
+    &.nodejs
+      background-color: #80BD01 !important
+    &.web, &.html5
+      background-color: #F36325 !important
+    &.css
+      background-color: #0171BB !important
+
 // -- BUTTON -------------------------------------------------------------------
 .button, button, input[type="submit"], input[type="reset"], input[type="button"]
   border                    : 1px solid WHITE
-  border-radius             : BORDER-RADIUS
+  // border-radius             : BORDER-RADIUS
   &:hover, &:focus
     color                   : THEME
     background-color        : WHITE

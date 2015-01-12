@@ -14,12 +14,9 @@ class Atoms.Atom.Video extends Atoms.Atom.Li
           <a href="/tag/{{.}}" class="{{.}}">{{.}}</a>
           {{/tags}}
         </ul>
-        {{#duration}}
-        <small>{{duration}}m</small>
-        {{/duration}}
+        {{#if.duration}}<small>{{duration}}m</small>{{/if.duration}}
       </div>
       <strong>{{title}}</strong>
-      <span>by <a href="/author/{{author.name}}">{{author.name}}</a></span>
-      <small>{{when}}{{#views}} - {{views}} views{{/views}}</small>
+      <small>{{when}}{{#if.views}} - {{views}} views{{/if.views}}</small>
     </li>
   """

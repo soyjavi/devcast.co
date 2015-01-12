@@ -6,12 +6,12 @@ body
 
   > header, > footer
     z-index                         : 1980
-    position                        : absolute
+    position                        : fixed
     left                            : 0
     right                           : 0
 
   > header
-    background                      : THEME
+    top                             : 0
     background-color                : rgba(235, 57, 8, 0.9)
     color                           : WHITE
     height                          : UNIT
@@ -26,14 +26,27 @@ body
       margin: 0
       background-color: darken(THEME, 25%) !important
       color: white !important
-    nav > *
-      margin-left: (SPACE / 2)
-    button
-      margin-bottom: 0
+      &::-webkit-input-placeholder
+        color: lighten(THEME, 50%)
+      &::-moz-placeholder
+        color: lighten(THEME, 50%)
+      &:-ms-input-placeholder
+        color: lighten(THEME, 50%)
+
+    nav
+      > *
+        margin-left: (SPACE / 1)
+      > a
+        font-size: FONT_SIZE_TINY
+        text-transform: uppercase
+        padding: 0 (SPACE / 4)
+      > button
+        margin-bottom: 0
 
   > article
-    padding-top: UNIT
-
+    > section
+      padding-top: UNIT !important
+  //   padding-top: UNIT
 
   > footer
     bottom                          : 0
