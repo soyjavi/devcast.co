@@ -1,12 +1,47 @@
 id: app
 style: active
 children:
+  - Organism.Header:
+      id: header
+      children:
+        - Atom.Heading:
+            style: left
+            value: devcast
+        - Molecule.Div:
+            style: left
+            id: form
+            children:
+              - Atom.Input:
+                  type: search
+                  placeholder: Search top videos for web developers...
+
+  - Molecule.Navigation:
+      event:
+        - select
+      children:
+        - Atom.Button:
+            text: Home
+            style: active
+        - Atom.Button:
+            text: Database
+        - Atom.Button:
+            text: Design
+        - Atom.Button:
+            text: JavaScript
+        - Atom.Button:
+            text: Mobile
+        - Atom.Button:
+            text: NodeJS
+        - Atom.Button:
+            text: Python
+        - Atom.Button:
+            text: Ruby
+
   - Organism.Section:
       id: videos
       style: active padding
       events:
         - scroll
-
       children:
         - Molecule.List:
             id: list

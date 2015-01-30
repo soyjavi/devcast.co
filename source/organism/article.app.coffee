@@ -11,6 +11,7 @@ class Atoms.Organism.App extends Atoms.Organism.Article
 
   # -- Children Bubble Events --------------------------------------------------
   onSectionScroll: (event) ->
+    super
     if event.down and event.percent > 75 and not @fetching
       @fetchVideos @page = @page + 1
 

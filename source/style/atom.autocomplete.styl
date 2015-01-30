@@ -1,0 +1,12 @@
+[data-atoms=app]
+  [data-atom-input=autocomplete]
+    > datalist
+      border-radius: BORDER_RADIUS
+      border: 1px solid FORM_COLOR
+      background-color: WHITE
+      > *
+        &:not(:last-child)
+          border-bottom: solid 1px lighten(FORM_COLOR, 50%)
+        &:active, &:hover
+          background-color: THEME
+          color: WHITE

@@ -5,11 +5,18 @@ port        : 1337
 timezone    : Europe/Amsterdam
 
 # -- Services ------------------------------------------------------------------
-# mongo:
-#   - name    : primary
-#     host    : 127.0.0.1
-#     port    : 27017
-#     db      : oizio
+mongo:
+  - name    : primary
+    host    : ds039417.mongolab.com
+    port    : 39417
+    db      : wally
+    user    : wally_user
+    password: thewebistheplatform
 
-# appnima:
-#   key: NTQ5OTA5Y2NiODIwN2ZhNTY2ODQ3NWMyOnVmVzVsblppUzhUYnRhNW1jejBPZXpVT2VMMDN3VEs=
+redis:
+  host: pub-redis-12485.us-east-1-1.2.ec2.garantiadata.com
+  port: 12485
+  password: clio21blanco
+
+appnima:
+    key: NTM2MTViZmYzNTc0Y2Y1NTRmMzI5NjAwOmMwS0NNYnFBVDBNZ2VVcTVqOVlqVXNMZzROb1ptbVA=

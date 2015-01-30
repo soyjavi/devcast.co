@@ -1,0 +1,43 @@
+[data-atoms=app]
+  [data-atom-input]:not([type=range]):not([type=checkbox]):not([data-atom-input=autocomplete]), [data-atom-input=autocomplete] > input, [data-atom-select], [data-atom-textarea]
+    padding-bottom: (FORM_SIZE / 2)
+    font-family: FONT_FAMILY
+    font-size: FONT_SIZE_NORMAL
+    font-weight: FONT_WEIGHT_NORMAL
+    background-color: transparent
+    border: none
+    border-radius: 0px
+    color: WHITE
+    box-shadow: inset 0 -2px lighten(THEME, 35%)
+    transition-property color, box-shadow
+    transition-duration ANIMATION_DURATION
+    transition-timing-function ANIMATION_EASE
+
+    &:focus
+      box-shadow: inset 0 -2px lighten(THEME, 75%)
+
+    &.error, &.required
+      color: darken(CANCEL, 5%)
+      box-shadow: inset 0 -2px lighten(CANCEL, 20%)
+      &::-webkit-input-placeholder
+        color: lighten(CANCEL, 40%)
+      &::-moz-placeholder
+        color: lighten(CANCEL, 40%)
+      &:-ms-input-placeholder
+        color: lighten(CANCEL, 40%)
+
+    &[disabled]
+      box-shadow: none
+      border-bottom: dashed 1px FORM_COLOR
+      color: darken(FORM_COLOR, 35%)
+
+    &::-webkit-input-placeholder
+      color: lighten(THEME, 35%)
+      font-weight: FONT_WEIGHT_THIN
+    &::-moz-placeholder
+      color: lighten(THEME, 35%)
+      font-weight: FONT_WEIGHT_THIN
+    &::-ms-input-placeholder
+      color: lighten(THEME, 35%)
+      font-weight: FONT_WEIGHT_THIN
+

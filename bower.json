@@ -16,7 +16,6 @@
         "atoms-app-theme"  : "*",
         "atoms-app-crud"   : "*",
         "hope"             : "*",
-        "flexo"            : "*",
         "jquery"           : "*",
         "stylmethods"      : "*",
         "moment"           : "*"

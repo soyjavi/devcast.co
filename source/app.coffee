@@ -6,5 +6,4 @@ Atoms.$ ->
 
   # -- Landing -----------------------------------------------------------------
   if page is "index"
-    new Atoms.Organism.Header()
     new Atoms.Organism.App()

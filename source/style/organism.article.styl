@@ -1,0 +1,127 @@
+[data-atoms=app]
+  > [data-organism-article]
+    &:not(.active)
+      > [data-organism-header] > *
+        transition opacity (ANIMATION_DURATION * 2) ANIMATION_EASE
+        opacity: 0
+    &.active
+      background-color: darken(BACKGROUND, 5%)
+      > [data-organism-header] > *
+        opacity: 1
+
+  &[data-screen=normal]
+    > [data-organism-article]
+        &:not(.active)
+           display: none
+
+  &[data-screen=small]
+    > [data-organism-article]
+      vendor(animation-fill-mode, forwards)
+      vendor(animation-duration, ANIMATION_DURATION)
+      vendor(animation-timing-function, ANIMATION_EASE)
+
+      &.active
+        transition-property opacity, transform
+        transition-duration ANIMATION_DURATION
+        transition-timing-function ANIMATION_EASE
+        &.aside
+          &:not(.right)
+            left: ASIDE_WIDTH
+          &.right
+            right: ASIDE_WIDTH
+        &.back
+          opacity: .35
+          filter: gray
+          -webkit-filter: grayscale(100%)
+          -moz-filter: grayscale(100%)
+          -ms-filter: grayscale(100%)
+          -o-filter: grayscale(100%)
+          filter: grayscale(100%)
+          transform scale(.95)
+        &[data-state="in"]
+          z-index: 2
+          &:not(.cover)
+            vendor(animation-name, article-in)
+          &.cover
+            vendor(animation-name, article-in-cover)
+          &:only-of-type
+            vendor(animation-duration, 1ms)
+        &[data-state="out"]
+          z-index: 2
+          vendor(animation-direction, reverse)
+          vendor(animation-fill-mode, forwards)
+          &:not(.cover)
+            vendor(animation-name, article-in)
+          &.cover
+            vendor(animation-delay, ANIMATION_DURATION)
+            vendor(animation-name, article-in-cover)
+        &[data-state="back-in"]
+          z-index: 1
+          &:not(.cover)
+            vendor(animation-name, article-out)
+          &.cover
+            vendor(animation-name, article-out-cover)
+        &[data-state="back-out"]
+          z-index: 1
+          vendor(animation-delay, 1)
+          vendor(animation-direction, reverse)
+          vendor(animation-fill-mode, forwards)
+          &:not(.cover)
+            vendor(animation-name, article-out)
+          &.cover
+            vendor(animation-name, article-out-cover)
+        &[data-state="aside-show"]
+          vendor(animation-fill-mode, forwards)
+          vendor(animation-name, article-aside)
+        &[data-state="aside-hide"]
+          vendor(animation-direction, reverse)
+          vendor(animation-fill-mode, forwards)
+          vendor(animation-name, article-aside)
+        &[data-state="aside-show-right"]
+          vendor(animation-fill-mode, forwards)
+          vendor(animation-name, article-aside-right)
+        &[data-state="aside-hide-right"]
+          vendor(animation-direction, reverse)
+          vendor(animation-fill-mode, forwards)
+          vendor(animation-name, article-aside-right)
+
+TRANSLATE = 100%
+OPACITY   = 1.0
+SCALE     = 0.9
+@keyframes article-in
+  0%
+    transform: translateX(TRANSLATE)
+  100%
+    transform: translateX(0)
+
+@keyframes article-out
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-(TRANSLATE/5))
+    opacity: OPACITY
+
+@keyframes article-in-cover
+  0%
+    transform: translateY(TRANSLATE)
+  100%
+    transform: translateY(0)
+
+@keyframes article-out-cover
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(-(TRANSLATE/10))
+    opacity: OPACITY
+
+@keyframes article-aside
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(ASIDE_WIDTH)
+
+@keyframes article-aside-right
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-(ASIDE_WIDTH))

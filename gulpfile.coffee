@@ -21,14 +21,8 @@ www =
                 'source/molecule/*.coffee'
                 'source/organism/*.coffee']
   styl      : [ 'bower_components/stylmethods/vendor.styl'
-                'source/style/__init.styl'
-                # ATOMS
-                'source/style/atoms/*.styl'
-                'bower_components/atoms-icons/atoms.icons.styl'
-                # FLEXO
-                'source/style/flexo/flexo.styl'
-                'source/style/flexo/flexo.page.styl'
-                'source/style/flexo/flexo.page.*.styl']
+                'source/style/*.styl'
+                'bower_components/atoms-icons/atoms.icons.styl']
   yml       : [ 'source/organism/*.yml']
 
   thirds    :
@@ -36,11 +30,8 @@ www =
                 'bower_components/moment/min/moment.min.js'
                 'bower_components/hope/hope.js'
                 'bower_components/atoms/atoms.standalone.js'
-                'bower_components/atoms/atoms.app.js'
-                'bower_components/atoms-app-table/atoms.app.table.js'
-                'bower_components/atoms-app-crud/atoms.app.crud.js']
-    css     : [ 'bower_components/flexo/dist/flexo.css'
-                'bower_components/atoms/atoms.app.css']
+                'bower_components/atoms/atoms.app.js']
+    css     : [ 'bower_components/atoms/atoms.app.css']
   assets    : 'www/assets/'
 
 banner = [

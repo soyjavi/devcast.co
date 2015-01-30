@@ -1,0 +1,80 @@
+[data-atom-button]
+  -webkit-font-smoothing: antialiased
+  font-smoothing: antialiased
+  [data-atoms=app] [data-organism-header] &
+    > abbr
+      font-weight: FONT_WEIGHT_NORMAL
+
+  [data-atoms=app] [data-organism-header] > :not(.right):not(.left) &
+    background-color: darken(THEME, 10%)
+    &:not(:last-child)
+      margin-right: 1px
+    &:first-child
+      border-radius: (U / 4) 0  0 (U / 4)
+    &:last-child
+      border-radius: 0 (U / 4) (U / 4) 0
+    &.active
+      background-color: darken(THEME, 20%)
+      color: WHITE
+
+  [data-atoms=app] [data-organism-section] &
+    color: WHITE
+    > abbr
+      font-weight: FONT_WEIGHT_BOLD
+    &:not(.transparent)
+      background-color: BUTTON
+      border-radius: BORDER_RADIUS
+    &:not([disabled]):not(.transparent)
+      transition: opacity 0.25s ease, background-color 0.25s ease, color 0.25s ease
+      PERCENT = 30%
+      &:active
+        color: WHITE
+        background-color: darken(BUTTON, PERCENT)
+      &.accept
+        background-color: ACCEPT
+        &:active
+          background-color: darken(ACCEPT, PERCENT)
+      &.cancel
+        background-color: CANCEL
+        &:active
+          background-color: darken(CANCEL, PERCENT)
+      &.warning
+        background-color: WARNING
+        &:active
+          background-color: darken(WARNING, PERCENT)
+      &.theme
+        background-color: THEME
+        &:active
+          background-color: darken(THEME, PERCENT)
+      &.accept, &.cancel, &.warning, &.theme
+        color: WHITE
+
+    &[disabled]
+      background-color: darken(BACKGROUND, 10%)
+      & > abbr, & .icon
+        opacity: 0.75
+
+  [data-atoms=app] & > small
+    font-weight: bold
+    border-radius: .25rem
+    color: WHITE
+    background-color: THEME
+  [data-atoms=app] header & > small
+    background-color: DARK
+
+
+@media screen and (min-width: 1024px)
+  [data-atoms=app] [data-organism-section] [data-atom-button]:not([disabled])
+    cursor: pointer
+    PERCENT = 15%
+    &:not(.accept):not(.cancel):not(.warning):not(.theme):hover
+      background-color: lighten(BUTTON, PERCENT)
+      color: WHITE
+    &.accept:hover
+      background-color: lighten(ACCEPT, PERCENT)
+    &.cancel:hover
+      background-color: lighten(CANCEL, PERCENT)
+    &.warning:hover
+      background-color: lighten(WARNING, PERCENT)
+    &.theme:hover
+      background-color: lighten(THEME, PERCENT)

@@ -1,41 +1,24 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway:200,400,700")
-// -- CONSTANTS ----------------------------------------------------------------
-// -- COLOR
-COLOR                       = #222222
-BACKGROUND                  = #f8f8f8
-BACKGROUND-DARK             = #444444
-THEME                       = #eb3908
-WHITE                       = #ffffff
-// -- FONT
-FONT-SIZE                   = 100%
-FONT-SIZE-SMALL             = 90%
-FONT-SIZE-TINY              = 80%
-FONT-WEIGHT-THIN            = 200
-FONT-WEIGHT-NORMAL          = 400
-FONT-WEIGHT-BOLD            = 700
-// -- SIZE
-UNIT                        = 4rem
-SPACE                       = (UNIT / 4)
-BORDER-RADIUS               = 4px
-// -- ANIMATION & TRANSITION
-TRANSITION-DURATION         = 250ms
-
+@import url("http://fonts.googleapis.com/css?family=Raleway:700,400,200")
 
 /* ------------------------- COLORS ------------------------- */
+THEME                   = #f30
+THEME = #CC171D
+BACKGROUND              = #eee
 DARK                    = #333
+WHITE                   = #fff
 BUTTON                  = darken(BACKGROUND, 25%)
 CANCEL                  = #e74c3c
 ACCEPT                  = #2ecc71
 WARNING                 = #edba22
 
 /* ----------------------- DIMENSIONS ----------------------- */
-ASIDE_WIDTH             = UNIT
+ASIDE_WIDTH             = 16rem
 FORM_SIZE               = 1rem
 MOBILE                  = 480px
 U                       = 1rem
 
 /* -------------------------- FORM -------------------------- */
-FORM_COLOR              = darken(BACKGROUND, 15%)
+FORM_COLOR              = lighten(THEME, 25%)
 BORDER_RADIUS           = .15rem
 
 /* ------------------------ ANIMATION ----------------------- */
@@ -44,7 +27,7 @@ ANIMATION_STEPS         = 15
 ANIMATION_EASE          = cubic-bezier(0.645, 0.045, 0.355, 1.000)
 
 /* -------------------------- FONT -------------------------- */
-FONT_FAMILY             = "Roboto", "Helvetica Neue", "Helvetica", "sans-serif"
+FONT_FAMILY             = "Raleway", "Helvetica Neue", "Helvetica", "sans-serif"
 FONT_SIZE_TINY          = 0.8rem
 FONT_SIZE_SMALL         = 0.9rem
 FONT_SIZE_NORMAL        = 1.0rem
@@ -56,4 +39,4 @@ FONT_WEIGHT_BOLD        = 700
 /* -------------------------- STYLES -------------------------- */
 DIVIDER                 = solid 1px darken(BACKGROUND, 2.5%)
 SHADOW_HEIGHT           = .075rem
-SHADOW_OPACITY          = rgba(0,0,0,0.15)
+SHADOW_OPACITY          = rgba(0,0,0,0.35)
