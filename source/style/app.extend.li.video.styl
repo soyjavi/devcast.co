@@ -1,0 +1,104 @@
+[data-atoms=app]
+  [data-atom-li=video]
+    WIDTH                     = 298px !important
+    HEIGHT                    = 160px !important
+    margin                    : (U / 2) !important
+    padding                   : 0 !important
+    display                   : inline-block !important
+    width                     : WIDTH
+    vertical-align            : top
+    > figure, .info
+      width                   : WIDTH
+      height                  : HEIGHT
+      border-radius           : .15rem
+    > figure
+      background-position     : center center
+      background-size         : 100%
+      transition                background-size TRANSITION-DURATION
+    > .info
+      position                : absolute
+      top                     : 0px
+      left                    : 0px
+      &, & > *
+        transition all TRANSITION-DURATION
+      .gloss
+        position              : absolute
+        width                 : 100%
+        height                : 100%
+        background            : -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)))
+        background            : -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0))
+        background            : linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0))
+        transition              background TRANSITION-DURATION
+        cursor                : pointer
+        &:after
+          SIZE = (U / 1.5)
+          position            : relative
+          left                : 50%
+          top                 : 50%
+          margin-left         : -(SIZE / 2)
+          margin-top          : -(SIZE / 2)
+          display             : block
+          content             : "\e624"
+          font-family         : 'Atoms'
+          width               : SIZE
+          height              : SIZE
+          line-height         : SIZE
+          font-size           : (SIZE / 2)
+          border-radius       : 50%
+          background-color    : rgba(255,255,255,0.5)
+          text-align          : center
+          text-indent         : .15rem
+          transform             scale(1.5)
+          opacity             : 0
+          transition            all TRANSITION-DURATION
+          cursor              : pointer
+      > .tags
+        margin                 : (U / 4) (U / 2)
+        > *
+          font-size: (FONT_SIZE_NORMAL / 1.5)
+          line-height: U
+          height: U
+          font-weight: FONT_WEIGHT_BOLD
+          padding: (U / 6) (U / 3)
+          border-radius: U
+
+      > small
+        position: absolute
+        display: block
+        padding: 0 (U / 6)
+        right: (U / 3)
+        bottom: (U / 3)
+        font-size: (FONT_SIZE_NORMAL / 1.5)
+        background-color: rgba(0,0,0,0.25)
+        color: WHITE
+
+    > strong, > small
+      display: block
+    > strong
+      margin: (U / 4) 0
+      font-size: FONT_SIZE_TINY
+      line-height: FONT_SIZE_NORMAL
+      max-height: (2 * U)
+      overflow: hidden
+    > small
+      font-size: HEIGHT = (FONT_SIZE_TINY / 1.3) !important
+      line-height: HEIGHT
+      text-transform: uppercase
+      opacity: 0.5
+
+
+    &:hover
+      > figure
+        background-size: 102.5%
+      > .info
+        .gloss
+          background: rgba(0,0,0,0.5)
+          &:after
+            transform scale(1)
+            opacity: .5
+          &:hover:after
+            opacity: 1
+      > .info
+        background-color: rgba(0,0,0,0.5)
+        > .tags
+          opacity: 0

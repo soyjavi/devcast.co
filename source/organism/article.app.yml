@@ -2,22 +2,24 @@ id: app
 style: active
 children:
   - Organism.Header:
-      id: header
       children:
         - Atom.Heading:
             style: left
             value: devcast
         - Molecule.Div:
             style: left
-            id: form
             children:
               - Atom.Input:
                   type: search
                   placeholder: Search top videos for web developers...
+                  events:
+                    - keyup
 
   - Molecule.Navigation:
-      event:
+      events:
         - select
+      callbacks:
+        - onChannel
       children:
         - Atom.Button:
             text: Home

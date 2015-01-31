@@ -6,6 +6,7 @@
     box-shadow 0 SHADOW_HEIGHT U SHADOW_OPACITY
 
     > [data-atom-button]
+      transition all (ANIMATION_DURATION / 2)
       > abbr, .icon
         color: lighten(THEME, 50%)
       > abbr
@@ -15,9 +16,9 @@
       > .icon
         font-weight: FONT_WEIGHT_BOLD
       &.active
-        box-shadow: inset 0 -.25rem DARK
+        box-shadow: inset 0 -.25rem COLOR = lighten(THEME, 90%)
         > abbr, .icon
-          color: WHITE
+          color: COLOR
 
   > [data-organism-article] > [data-organism-header] [data-molecule-navigation] [data-atom-button]
     color: darken(THEME, 40%)
