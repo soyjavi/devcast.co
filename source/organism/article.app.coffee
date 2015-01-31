@@ -31,7 +31,7 @@ class Atoms.Organism.App extends Atoms.Organism.Article
   # -- Private Events ----------------------------------------------------------
   fetchVideos: (@page = 0, @filter = {}, @context = "index") ->
     @fetching = true
-gi    __.Entity.Video.destroyAll() if @page is 0
+    __.Entity.Video.destroyAll() if @page is 0
     parameters = page: @page
     parameters.tag = @filter.tag if @filter.tag
     parameters.author = @filter.author if @filter.author
