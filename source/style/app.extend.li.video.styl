@@ -7,98 +7,96 @@
     display                   : inline-block !important
     width                     : WIDTH
     vertical-align            : top
-    > figure, .info
+    background-color          : #607d8b
+    cursor                    : pointer
+    > figure, .general
       width                   : WIDTH
       height                  : HEIGHT
-      border-radius           : .15rem
     > figure
       background-position     : center center
       background-size         : 100%
-      transition                background-size TRANSITION-DURATION
-    > .info
+      box-shadow                inset 0 0 0 10rem rgba(0,0,0,0.35)
+
+    > .general
       position                : absolute
       top                     : 0px
       left                    : 0px
-      &, & > *
-        transition all TRANSITION-DURATION
-      .gloss
-        position              : absolute
-        width                 : 100%
-        height                : 100%
-        background            : -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255, 255, 255, .15)), to(rgba(0, 0, 0, .25))), -webkit-gradient(linear, left top, right bottom, color-stop(0, rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, .1)), color-stop(0.501, rgba(255, 255, 255, 0)), color-stop(1, rgba(255, 255, 255, 0)))
-        background            : -moz-linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), -moz-linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0))
-        background            : linear-gradient(top, rgba(255, 255, 255, .15), rgba(0, 0, 0, .25)), linear-gradient(left top, rgba(255, 255, 255, 0), rgba(255, 255, 255, .1) 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0))
-        transition              background TRANSITION-DURATION
-        cursor                : pointer
-        &:after
-          SIZE = (U / 1.5)
-          position            : relative
-          left                : 50%
-          top                 : 50%
-          margin-left         : -(SIZE / 2)
-          margin-top          : -(SIZE / 2)
-          display             : block
-          content             : "\e624"
-          font-family         : 'Atoms'
-          width               : SIZE
-          height              : SIZE
-          line-height         : SIZE
-          font-size           : (SIZE / 2)
-          border-radius       : 50%
-          background-color    : rgba(255,255,255,0.5)
-          text-align          : center
-          text-indent         : .15rem
-          transform             scale(1.5)
-          opacity             : 0
-          transition            all TRANSITION-DURATION
-          cursor              : pointer
-      > .tags
-        margin                 : (U / 4) (U / 2)
-        > *
-          font-size: (FONT_SIZE_NORMAL / 1.5)
-          line-height: U
-          height: U
-          font-weight: FONT_WEIGHT_BOLD
-          padding: (U / 6) (U / 3)
-          border-radius: U
-
       > small
         position: absolute
         display: block
         padding: 0 (U / 6)
-        right: (U / 3)
-        bottom: (U / 3)
+        right: U
+        top: U
         font-size: (FONT_SIZE_NORMAL / 1.5)
         background-color: rgba(0,0,0,0.25)
         color: WHITE
+      > h2
+        position              : absolute
+        bottom                : (U / 1.5)
+        left                  : U
+        right                 : U
+        font-size             : SIZE = (1.25 * U)
+        font-weight           : FONT_WEIGHT_THIN
+        text-shadow           : 0 (U / 10) (U / 5) rgba(0,0,0,0.25)
+        color                 : WHITE
 
-    > strong, > small
-      display: block
-    > strong
-      margin: (U / 4) 0
-      font-size: FONT_SIZE_TINY
-      line-height: FONT_SIZE_NORMAL
-      max-height: (2 * U)
-      overflow: hidden
-    > small
-      font-size: HEIGHT = (FONT_SIZE_TINY / 1.3) !important
-      line-height: HEIGHT
-      text-transform: uppercase
-      opacity: 0.5
+    > .info
+      &, & a
+        color                 : rgba(255,255,255,0.85)
+      > *
+        padding               : (U / 1.5) U
+        font-size             : FONT_SIZE_TINY
+        &:not(:last-child)
+          box-shadow            0 1px rgba(255,255,255,0.25)
+      > strong
+        font-weight           : FONT_WEIGHT_NORMAL
+        // height                : (3.4 * U)
+        // overflow              : hidden
+      > nav > a
+        padding-right         : (U / 2)
+        font-weight           : FONT_WEIGHT_BOLD
 
-
-    &:hover
+    OPACITY = 0.35
+    &.javascript, &.hadoop
+      background-color        : JAVASCRIPT
       > figure
-        background-size: 102.5%
+        box-shadow              inset 0 0 0 10rem alpha(JAVASCRIPT, OPACITY)
       > .info
-        .gloss
-          background: rgba(0,0,0,0.5)
-          &:after
-            transform scale(1)
-            opacity: .5
-          &:hover:after
-            opacity: 1
-      > .info
-        background-color: rgba(0,0,0,0.5)
-        > .tags
-          opacity: 0
+        &, & a
+          color                 : rgba(0,0,0,0.85)
+    &.python
+      background-color        : PYTHON
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(PYTHON, OPACITY)
+    &.ruby
+      background-color        : RUBY
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(RUBY, OPACITY)
+    &.css
+      background-color        : CSS
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(CSS, OPACITY)
+    &.php
+      background-color        : PHP
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(PHP, OPACITY)
+    &.android
+      background-color        : ANDROID
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(ANDROID, OPACITY)
+    &.redis
+      background-color        : REDIS
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(REDIS, OPACITY)
+    &.nodejs
+      background-color        : NODEJS
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(NODEJS, OPACITY)
+    &.web
+      background-color        : WEB
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(WEB, OPACITY)
+    &.html5
+      background-color        : HTML5
+      > figure
+        box-shadow              inset 0 0 0 10rem alpha(HTML5, OPACITY)

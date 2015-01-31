@@ -7,9 +7,11 @@ class __.Entity.Video extends Atoms.Class.Entity
           "created_at"
 
   parse: ->
-    title   : @title
-    image   : @image
-    tags    : (@tags[i] for i in [0..2] when @tags[i])
-    duration: @duration
-    when    : moment(@created_at).fromNow()
-    views   : @views
+    style       : @tags[0]
+    title       : @title
+    description : @description
+    image       : @image
+    tags        : (@tags[i] for i in [0..2] when @tags[i])
+    duration    : @duration
+    when        : moment(@created_at).fromNow()
+    views       : @views
