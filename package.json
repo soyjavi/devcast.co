@@ -5,7 +5,10 @@
   "homepage"        : "",
   "author"          : "Javi Jimenez Villar",
   "dependencies": {
+    "cheerio"       : "*",
     "coffee-script" : "*",
+    "cron"          : "*",
+    "request"       : "*",
     "zenserver"     : "*"
   },
   "devDependencies" : {

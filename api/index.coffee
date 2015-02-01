@@ -1,14 +1,7 @@
 "use strict"
 
 Hope        = require("zenserver").Hope
-Redis       = require("zenserver").Redis
-Appnima     = require("zenserver").Appnima
-User        = require "../common/models/user"
 Video       = require "../common/models/video"
-VideoLike   = require "../common/models/video_like"
-VideoView   = require "../common/models/video_view"
-VideoSubmit = require "../common/models/video_submit"
-Session     = require "../common/session"
 
 PAGINATION  = 24
 
