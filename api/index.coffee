@@ -10,7 +10,7 @@ VideoView   = require "../common/models/video_view"
 VideoSubmit = require "../common/models/video_submit"
 Session     = require "../common/session"
 
-PAGINATION  = 30
+PAGINATION  = 24
 
 CHANNELS =
   javascript: ["javascript"]
@@ -58,38 +58,36 @@ module.exports = (server) ->
     __videos response, filter, PAGINATION, page
 
 
-  server.post "/api/submit", (request, response) ->
-    Session(response).then (error, session) ->
-      attributes =
-        user: session
-        url : request.parameters.url
-      VideoSubmit.register(attributes).then (error, value) ->
-        response.successful()
+  # server.post "/api/submit", (request, response) ->
+  #   Session(response).then (error, session) ->
+  #     attributes =
+  #       user: session
+  #       url : request.parameters.url
+  #     VideoSubmit.register(attributes).then (error, value) ->
+  #       response.successful()
 
 
-  server.post "/api/like", (request, response) ->
-    response.required ['video']
+  # server.post "/api/like", (request, response) ->
+  #   response.required ['video']
+  #   Session(response).then (error, session) ->
+  #     attributes =
+  #       user : session
+  #       video: request.parameters.video
+  #     VideoLike.register(attributes).then (error, value) ->
+  #       response.successful()
 
-    Session(response).then (error, session) ->
-      attributes =
-        user : session
-        video: request.parameters.video
-      VideoLike.register(attributes).then (error, value) ->
-        response.successful()
 
-
-  server.post "/api/watchlater", (request, response) ->
-    response.required ['video']
-
-    Session(response).then (error, session) ->
-      if session
-        video = request.parameters.video
-        key = "WATCHLATER:#{session.id}"
-        Redis.run "SADD", key, video
-        Redis.run "EXPIRE", key, (60 * 60 * 24 * 14)
-        response.successful()
-      else
-        response.unauthorized()
+  # server.post "/api/watchlater", (request, response) ->
+  #   response.required ['video']
+  #   Session(response).then (error, session) ->
+  #     if session
+  #       video = request.parameters.video
+  #       key = "WATCHLATER:#{session.id}"
+  #       Redis.run "SADD", key, video
+  #       Redis.run "EXPIRE", key, (60 * 60 * 24 * 14)
+  #       response.successful()
+  #     else
+  #       response.unauthorized()
 
 # -- Private -------------------------------------------------------------------
 __videos = (response, filter={}, limit, page, sort) ->

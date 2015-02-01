@@ -39,17 +39,18 @@
 
 
     > .info
+      overflow                : hidden
       &, & a
         color                 : rgba(255,255,255,0.85)
       > *
         padding               : (U / 1.5) U
         font-size             : FONT_SIZE_TINY
         &:not(:last-child)
-          box-shadow            0 1px rgba(255,255,255,0.25)
+          box-shadow            0 1px rgba(255,255,255,0.2)
       > strong
         font-weight           : FONT_WEIGHT_NORMAL
-        height                : (3.35 * U)
-        overflow              : hidden
+        // height                : (3.35 * U)
+        // overflow              : hidden
         border-bottom         : solid (U / 4) transparent
       > nav > a
         padding-right         : (U / 2)
@@ -100,3 +101,45 @@
       background-color        : HTML5
       > figure
         box-shadow              inset 0 0 0 10rem alpha(HTML5, OPACITY)
+
+
+RATIO = 0.55
+@media only screen and (min-width:1680px)
+  [data-atom-li=video]
+    width: WIDTH = 320px
+    > figure, .general
+      width : WIDTH
+      height: (WIDTH * RATIO)
+
+@media only screen and (min-width:1440px) and (max-width: 1679px)
+  [data-atom-li=video]
+    width: WIDTH = 224px
+    > figure, .general
+      width : WIDTH
+      height: (WIDTH * RATIO)
+
+@media only screen and (min-width:1200px) and (max-width: 1439px)
+  [data-atom-li=video]
+    width: WIDTH = 194px
+    > figure, .general
+      width : WIDTH
+      height: (WIDTH * RATIO)
+
+// @media only screen and (min-width: 768px) and (max-width: 1199px)
+//   [data-atom-li=video]
+//     width: WIDTH = 168px
+//     > figure
+//       height: (WIDTH * RATIO)
+
+// @media only screen and (min-width: 480px) and (max-width: 767px)
+//   [data-atom-li=video]
+//     width: WIDTH =  216px
+//     > figure
+//       height: (WIDTH * RATIO)
+
+// /* ==== Phone (portrait 300px) ==== */
+// @media only screen and (max-width: 528px)
+//   [data-atom-li=video]
+//     width: WIDTH = 100%
+//     > figure
+//       height: 168px

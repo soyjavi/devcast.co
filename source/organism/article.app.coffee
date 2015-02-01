@@ -46,6 +46,6 @@ class Atoms.Organism.App extends Atoms.Organism.Article
     parameters.author = @filter.author if @filter.author
     parameters.channel = @filter.channel if @filter.channel
     parameters.query = @filter.query if @filter.query
-    __.proxy("GET", @context, parameters).then (error, response) =>
+    __.proxy("GET", @context, parameters, @page > 0).then (error, response) =>
       __.Entity.Video.create video for video in response?.videos
-      @fetching = false
+      @fetching = false if response?.videos.length is 24
