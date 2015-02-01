@@ -4,6 +4,13 @@ host        : localhost
 port        : 1343
 timezone    : Europe/Amsterdam
 
+# -- Continous Deployment ------------------------------------------------------
+deploy:
+  - "git pull"
+  - "bower install --allow-root"
+  - "gulp init"
+  - "pm2 restart DEVCAST"
+
 # -- Services ------------------------------------------------------------------
 mongo:
   - name    : primary
