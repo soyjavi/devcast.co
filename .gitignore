@@ -1,7 +1,6 @@
-npm-debug.log
 zen.error.json
-
 bower_components
+environment/
 node_modules
 www/assets/css
 www/assets/js
