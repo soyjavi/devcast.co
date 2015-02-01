@@ -5,13 +5,10 @@
     margin                    : (U / 2) !important
     padding                   : 0 !important
     display                   : inline-block !important
-    width                     : WIDTH
     vertical-align            : top
     background-color          : #607d8b
     cursor                    : pointer
-    > figure, .general
-      width                   : WIDTH
-      height                  : HEIGHT
+    box-shadow                : 0 1px 3px darken(BACKGROUND, 10%)
     > figure
       background-position     : center center
       background-size         : 100%
@@ -49,13 +46,14 @@
           box-shadow            0 1px rgba(255,255,255,0.2)
       > strong
         font-weight           : FONT_WEIGHT_NORMAL
-        // height                : (3.35 * U)
-        // overflow              : hidden
+        max-height                : (3.35 * U)
+        overflow              : hidden
         border-bottom         : solid (U / 4) transparent
-      > nav > a
-        padding-right         : (U / 2)
-        font-weight           : FONT_WEIGHT_BOLD
-
+      > nav
+        // background-color      : rgba(255,255,255,0.1)
+        > a
+          padding-right       : (U / 2)
+          font-weight         : FONT_WEIGHT_BOLD
 
     OPACITY = 0.4
     &.javascript, &.hadoop
@@ -64,7 +62,7 @@
         box-shadow              inset 0 0 0 10rem alpha(JAVASCRIPT, OPACITY)
       > .info
         &, & a
-          color                 : rgba(0,0,0,0.85)
+          color                 : rgba(0,0,0,0.7)
     &.python
       background-color        : PYTHON
       > figure
@@ -105,41 +103,51 @@
 
 RATIO = 0.55
 @media only screen and (min-width:1680px)
-  [data-atom-li=video]
-    width: WIDTH = 320px
+  [data-atoms=app] [data-atom-li=video]
+    width: WIDTH = 320px !important
     > figure, .general
       width : WIDTH
       height: (WIDTH * RATIO)
 
 @media only screen and (min-width:1440px) and (max-width: 1679px)
-  [data-atom-li=video]
-    width: WIDTH = 224px
+  [data-atoms=app] [data-atom-li=video]
+    width: WIDTH = 338px !important
     > figure, .general
       width : WIDTH
-      height: (WIDTH * RATIO)
+      height: (WIDTH * RATIO) !important
 
 @media only screen and (min-width:1200px) and (max-width: 1439px)
-  [data-atom-li=video]
-    width: WIDTH = 194px
+  [data-atoms=app] [data-atom-li=video]
+    WIDTH                     = 298px !important
+    width: WIDTH = 298px !important
     > figure, .general
       width : WIDTH
-      height: (WIDTH * RATIO)
+      height: (WIDTH * RATIO) !important
 
-// @media only screen and (min-width: 768px) and (max-width: 1199px)
-//   [data-atom-li=video]
-//     width: WIDTH = 168px
-//     > figure
-//       height: (WIDTH * RATIO)
+@media only screen and (min-width: 769px) and (max-width: 1199px)
+  [data-atoms=app] [data-atom-li=video]
+    width: WIDTH = 234px !important
+    > figure, .general
+      width : WIDTH
+      height: (WIDTH * RATIO) !important
+    > .general
+      > h2
+        font-size: FONT_SIZE_NORMAL !important
 
-// @media only screen and (min-width: 480px) and (max-width: 767px)
-//   [data-atom-li=video]
-//     width: WIDTH =  216px
-//     > figure
-//       height: (WIDTH * RATIO)
+@media only screen and (min-width: 480px) and (max-width: 768px)
+  [data-atoms=app] [data-atom-li=video]
+    width: WIDTH =  232px !important
+    > figure, .general
+      width : WIDTH
+      height: (WIDTH * RATIO) !important
+    > .general
+      > h2
+        font-size: FONT_SIZE_NORMAL !important
 
-// /* ==== Phone (portrait 300px) ==== */
-// @media only screen and (max-width: 528px)
-//   [data-atom-li=video]
-//     width: WIDTH = 100%
-//     > figure
-//       height: 168px
+@media only screen and (max-width: 528px)
+  [data-atoms=app] [data-atom-li=video]
+    margin: 0 0 U 0  !important
+    width: WIDTH = 100% !important
+    > figure, .general
+      width : WIDTH
+      height: 164px !important

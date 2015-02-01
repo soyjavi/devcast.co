@@ -17,6 +17,7 @@ children:
 
   - Molecule.Navigation:
       id: channels
+      screen: normal
       events:
         - select
       callbacks:
