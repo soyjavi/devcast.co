@@ -17,7 +17,7 @@ CHANNELS =
   ruby      : ["ruby"]
   python    : ["python"]
   database  : ["sql", "mongodb", "redis", "hadoop", "raabbitmq", "mysql", "postgresql", "nosql", "db"]
-  node_js   : ["nodejs"]
+  nodejs    : ["nodejs"]
   design    : ["css"]
   languages : ["coffeescript", "dart", "typescript", "clojure", "scala"]
   mobile    : ["android", "ios", "mobile"]

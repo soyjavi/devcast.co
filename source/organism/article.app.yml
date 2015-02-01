@@ -16,6 +16,7 @@ children:
                     - keyup
 
   - Molecule.Navigation:
+      id: channels
       events:
         - select
       callbacks:

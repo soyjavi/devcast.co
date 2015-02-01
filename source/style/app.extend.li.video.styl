@@ -21,24 +21,22 @@
       position                : absolute
       top                     : 0px
       left                    : 0px
-      > small
-        position: absolute
-        display: block
-        padding: 0 (U / 6)
-        right: U
-        top: U
-        font-size: (FONT_SIZE_NORMAL / 1.5)
-        background-color: rgba(0,0,0,0.25)
-        color: WHITE
-      > h2
+      > *
         position              : absolute
+        text-shadow           : 0 (U / 10) (U / 5) rgba(0,0,0,0.25)
+        color                 : WHITE
+      > small
+        right                 : U
+        top                   : (U / 1.25)
+        font-size             : FONT_SIZE_TINY
+        font-weight           : FONT_WEIGHT_BOLD
+      > h2
         bottom                : (U / 1.5)
         left                  : U
         right                 : U
         font-size             : SIZE = (1.25 * U)
         font-weight           : FONT_WEIGHT_THIN
-        text-shadow           : 0 (U / 10) (U / 5) rgba(0,0,0,0.25)
-        color                 : WHITE
+
 
     > .info
       &, & a
@@ -50,13 +48,15 @@
           box-shadow            0 1px rgba(255,255,255,0.25)
       > strong
         font-weight           : FONT_WEIGHT_NORMAL
-        // height                : (3.4 * U)
-        // overflow              : hidden
+        height                : (3.35 * U)
+        overflow              : hidden
+        border-bottom         : solid (U / 4) transparent
       > nav > a
         padding-right         : (U / 2)
         font-weight           : FONT_WEIGHT_BOLD
 
-    OPACITY = 0.35
+
+    OPACITY = 0.4
     &.javascript, &.hadoop
       background-color        : JAVASCRIPT
       > figure

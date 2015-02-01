@@ -7,24 +7,33 @@ class Atoms.Organism.App extends Atoms.Organism.Article
   constructor: ->
     super
     do @render
-    do @fetchVideos
+    url = Atoms.Url.path().split("/")
+    @filter = if url[1]? and url[1] is "channel" then channel: url[2] else {}
+    @fetchVideos @page = 0, @filter
+    for child in @channels.children when child.attributes.text.toLowerCase() is @filter.channel
+      child.el.addClass("active").siblings().removeClass("active")
+      break
 
   # -- Children Bubble Events --------------------------------------------------
   onInputKeyup: (event, atom) ->
     input = atom.value()
-    if input.length >= 2
+    if input.length >= 2 and not @fetching
       @fetchVideos @page = 0, @filter = query: input, "search"
 
   onChannel: (event, button) ->
     key = button.attributes.text.toLowerCase()
-    filter = channel: key if key isnt "home"
+    if key isnt "home"
+      Atoms.Url.path "channel/#{key}"
+      filter = channel: key
+    else
+      Atoms.Url.path ""
     @fetchVideos @page = 0, filter, @context = "index"
 
   onVideoSelect: (atom) ->
     console.log  atom.entity
 
   onSectionScroll: (event) ->
-    # super
+    super
     if event.down and event.percent > 75 and not @fetching
       @fetchVideos @page = @page + 1, @filter
 
