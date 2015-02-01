@@ -26,7 +26,7 @@ module.exports = (zen) ->
             video   : @video.parse()
           response.page "base", bindings, ["partial.video"]
         else
-          site.redirect "/"
+          response.redirect "/"
 
 
     else
