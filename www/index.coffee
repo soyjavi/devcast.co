@@ -13,9 +13,9 @@ module.exports = (zen) ->
     if request.parameters.video.length > 0
       Hope.shield([->
         Video.search _id: request.parameters.video, limit = 1
-      # , (error, @video) =>
-      #   Video.attributes @video._id, views: @video.views + 1
-      ]).then (error, @video) =>
+      , (error, @video) =>
+        Video.attributes @video._id, views: @video.views + 1
+      ]).then (error, value) =>
         unless error
           key = "VIEWS:TODAY:#{@video.id}"
           Redis.run "INCR", key
@@ -27,7 +27,5 @@ module.exports = (zen) ->
           response.page "base", bindings, ["partial.video"]
         else
           response.redirect "/"
-
-
     else
       response.page "base", page: "index"
