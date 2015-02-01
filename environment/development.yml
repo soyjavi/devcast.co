@@ -1,7 +1,7 @@
 # -- General Info --------------------------------------------------------------
 type        : development
 host        : localhost
-port        : 1337
+port        : 1343
 timezone    : Europe/Amsterdam
 
 # -- Services ------------------------------------------------------------------
