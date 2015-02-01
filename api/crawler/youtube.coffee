@@ -83,8 +83,8 @@ class Youtube extends Crawler
         created_at    : item.published.$t
       data.tags = Model.techTags data
 
-      # Model.register(data).then (error, value) =>
-      #   if value then @results.push id: value._id, title: value.title
+      Model.register(data).then (error, value) =>
+        if value then @results.push id: value._id, title: value.title
 
 exports = module.exports = Youtube
 
