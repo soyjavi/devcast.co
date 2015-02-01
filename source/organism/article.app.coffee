@@ -30,7 +30,7 @@ class Atoms.Organism.App extends Atoms.Organism.Article
     @fetchVideos @page = 0, filter, @context = "index"
 
   onVideoSelect: (atom) ->
-    console.log  atom.entity
+    window.location = "/#{atom.entity.id}"
 
   onSectionScroll: (event) ->
     super

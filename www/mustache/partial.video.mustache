@@ -1,0 +1,11 @@
+<article data-organism-article class="active">
+  <header data-organism-header>
+    <h1 data-atom-heading class="left"><a href="/">devcast</a></h1>
+    <h2>{{video.title}} <small>by <a href="/author/{{video.author.id}}">{{video.author.name}}</a></small></h2>
+    <nav>
+      {{#video.tags}}<a href="/tag/{{.}}" class="{{.}}">{{.}}</a>{{/video.tags}}
+    </nav>
+
+  </header>
+</article>
+<iframe type="text/html" src="{{video.embed}}" allowfullscreen></iframe>

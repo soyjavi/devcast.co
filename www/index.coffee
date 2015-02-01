@@ -1,25 +1,33 @@
 "use strict"
 
-Session = require "../common/session"
+Hope        = require("zenserver").Hope
+Redis       = require("zenserver").Redis
+Video       = require("../common/models/video")
 
 module.exports = (zen) ->
 
   zen.get "/channel/:context", (request, response) ->
-    Session(request, response, redirect = true).then (error, session) ->
-      binding =
-        page    : "index"
-        session : session
-      response.page "base", binding, ["partial.index"]
+    response.page "base", page: "index"
 
   zen.get "/:video", (request, response) ->
-    binding =
-      page    : "index"
-      session : session
-    response.page "base", binding, ["partial.video"]
+    if request.parameters.video.length > 0
+      Hope.shield([->
+        Video.search _id: request.parameters.video, limit = 1
+      # , (error, @video) =>
+      #   Video.attributes @video._id, views: @video.views + 1
+      ]).then (error, @video) =>
+        unless error
+          key = "VIEWS:TODAY:#{@video.id}"
+          Redis.run "INCR", key
+          Redis.run "EXPIRE", key, (60 * 60 * 24)
+          bindings =
+            page    : "video"
+            title   : "#{@video.title} - devcast.co"
+            video   : @video.parse()
+          response.page "base", bindings, ["partial.video"]
+        else
+          site.redirect "/"
 
-  zen.get "/", (request, response) ->
-    Session(request, response, redirect = true).then (error, session) ->
-      binding =
-        page    : "index"
-        session : session
-      response.page "base", binding
+
+    else
+      response.page "base", page: "index"
