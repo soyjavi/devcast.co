@@ -45,6 +45,16 @@ module.exports = (server) ->
     __videos response, filter, PAGINATION, page
 
 
+  server.get "/api/techtags", (request, response) ->
+    Video.search().then (error, videos) ->
+      for video in videos
+        video.tags = Video.techTags video
+        video.save()
+        if video.tags.length is 0
+          console.log "\n\n", video.title
+          console.log video.description
+      response.json "videos": videos.length
+
 # -- Private -------------------------------------------------------------------
 __videos = (response, filter={}, limit, page, sort) ->
   Video.search(filter, limit, page, sort).then (error, videos) ->

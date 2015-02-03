@@ -58,5 +58,3 @@ children:
               atom        : "Atom.Video"
               events      : ["touch"]
               create      : true
-              update      : true
-              destroy     : true

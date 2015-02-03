@@ -17,6 +17,11 @@
       right: (2 * U)
       flex-grow(2)
       margin-top: (U / 5)
-      > [data-atom-input]
-        font-size: 1.5rem !important
 
+@media only screen and (min-width: 528px)
+  [data-atom-input]
+    font-size: 1.5rem !important
+
+@media only screen and (max-width: 528px)
+  [data-atom-input]
+    font-size: FONT_SIZE_SMALL !important
