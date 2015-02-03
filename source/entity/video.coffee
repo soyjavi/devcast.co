@@ -9,7 +9,7 @@ class __.Entity.Video extends Atoms.Class.Entity
   parse: ->
     style       : @tags[0]
     title       : @title
-    description : @description
+    description : @description or false
     image       : @image
     tags        : (@tags[i] for i in [0..2] when @tags[i])
     duration    : @duration

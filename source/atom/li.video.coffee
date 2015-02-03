@@ -12,7 +12,9 @@ class Atoms.Atom.Video extends Atoms.Atom.Li
         <h2>{{title}}</h2>
       </div>
       <div class="info">
+        {{#if.description}}
         <strong>{{description}}</strong>
+        {{/if.description}}
         {{#if.tags}}
         <nav>
           {{#tags}}<a href="/tag/{{.}}" class="{{.}}">{{.}}</a>{{/tags}}

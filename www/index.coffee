@@ -21,9 +21,12 @@ module.exports = (zen) ->
           Redis.run "INCR", key
           Redis.run "EXPIRE", key, (60 * 60 * 24)
           bindings =
-            page    : "video"
-            title   : "#{@video.title} - devcast.co"
-            video   : @video.parse()
+            page          : "video"
+            title         : "#{@video.title} - devcast.co"
+            video         : @video.parse()
+            meta:
+              title       : " - #{@video.title}"
+              description : @video.description
           response.page "base", bindings, ["partial.video"]
         else
           response.redirect "/"
