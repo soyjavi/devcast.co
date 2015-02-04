@@ -9,11 +9,17 @@
     background-color          : #607d8b
     cursor                    : pointer
     box-shadow                : 0 1px 3px darken(BACKGROUND, 10%)
+    transition                  all ANIMATION_DURATION ANIMATION_EASE
+    > *
+      overflow                : hidden
     > figure
       background-position     : center center
       background-size         : 100%
-      box-shadow                inset 0 0 0 10rem rgba(0,0,0,0.35)
-
+      -webkit-filter: VALUE = opacity(0.4) grayscale(0.5)
+      -moz-filter: VALUE
+      -o-filter: VALUE
+      -ms-filter: VALUE
+      filter: VALUE
     > .general
       position                : absolute
       top                     : 0px
@@ -28,11 +34,12 @@
         font-size             : FONT_SIZE_TINY
         font-weight           : FONT_WEIGHT_BOLD
       > h2
-        bottom                : (U / 1.5)
-        left                  : U
-        right                 : U
+        bottom                : 0
+        left                  : 0
+        right                 : 0
+        padding               : (U / 2) U
         font-size             : SIZE = (1.25 * U)
-        font-weight           : FONT_WEIGHT_THIN
+        font-weight           : FONT_WEIGHT_NORMAL
 
     > .info
       overflow                : hidden
@@ -42,62 +49,43 @@
         padding               : (U / 1.5) U
         font-size             : FONT_SIZE_TINY
         &:not(:last-child)
-          box-shadow            0 1px rgba(255,255,255,0.2)
+          box-shadow            0 1px rgba(255,255,255,0.1)
       > strong
         font-weight           : FONT_WEIGHT_NORMAL
-        // max-height                : (3.35 * U)
-        // overflow              : hidden
-        border-bottom         : solid (U / 4) transparent
       > nav
-        // background-color      : rgba(255,255,255,0.1)
+        // background-color      : rgba(255,255,255,0.05)
         > a
           padding-right       : (U / 2)
           font-weight         : FONT_WEIGHT_BOLD
+    &:hover
+      transform                 scale(1.01)
+      box-shadow              : 0 0 1rem darken(BACKGROUND, 15%)
 
-    OPACITY = 0.4
+
+    // -- TAG COLORS
     &.javascript, &.hadoop
       background-color        : JAVASCRIPT
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(JAVASCRIPT, OPACITY)
       > .info
         &, & a
           color                 : rgba(0,0,0,0.7)
     &.python
       background-color        : PYTHON
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(PYTHON, OPACITY)
     &.ruby
       background-color        : RUBY
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(RUBY, OPACITY)
     &.css
       background-color        : CSS
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(CSS, OPACITY)
     &.php
       background-color        : PHP
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(PHP, OPACITY)
     &.android
       background-color        : ANDROID
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(ANDROID, OPACITY)
     &.redis
       background-color        : REDIS
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(REDIS, OPACITY)
     &.nodejs
       background-color        : NODEJS
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(NODEJS, OPACITY)
     &.web
       background-color        : WEB
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(WEB, OPACITY)
     &.html5
       background-color        : HTML5
-      > figure
-        box-shadow              inset 0 0 0 10rem alpha(HTML5, OPACITY)
 
 
 RATIO = 0.54
